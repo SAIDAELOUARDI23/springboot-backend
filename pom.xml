@@ -60,6 +60,7 @@
 				<version>2.6.1</version> 
 			</plugin>
 		</plugins>
+		<finalName>springboot-backend</finalName>
 	</build>
 
 </project>
