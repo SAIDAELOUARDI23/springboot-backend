@@ -57,7 +57,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.6.1</version> 
+				<version>3.0.4</version> <!-- Mise à jour de la version -->
 			</plugin>
 		</plugins>
 		<finalName>springboot-backend</finalName>
