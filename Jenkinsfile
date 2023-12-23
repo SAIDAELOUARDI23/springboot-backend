@@ -1,34 +1,32 @@
 pipeline {
-    agent any
-
+    agent { label 'Jenkins-Agent' }
     tools {
-        maven 'Maven'
+        jdk 'Java17'
+        maven 'Maven3'
     }
-
+  
     stages {
-        stage('Build Maven') {
+        stage("Cleanup Workspace") {
             steps {
-                script {
-                    // Corrected the checkout step
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/SAIDAELOUARDI23/devops-springboot-automation']]])
-                    bat 'mvn clean install'
-                }
+                cleanWs()
             }
         }
-        stage('Build Docker Image') {
+
+        stage("Checkout from SCM") {
             steps {
-                script {
-                    bat 'docker build -t devops/springboot-backend .'
-                }
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Ashfaque-9x/register-app'
             }
         }
-        stage('Push Image To Hub') {
+
+        stage("Build Application") {
             steps {
-                script {
-                    bat 'docker login -u saida777 -p Pa171709@'
-                    bat 'docker tag devops/springboot-backend saida777/ss:devops-springboot-backend'
-                    bat 'docker push saida777/ss:devops-springboot-backend'
-                }
+                sh "mvn clean package"
+            }
+        }
+
+        stage("Test Application") {
+            steps {
+                sh "mvn test"
             }
         }
     }
