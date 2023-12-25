@@ -21,7 +21,7 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/SAIDAELOUARDI23/devops-springboot-automation'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/SAIDAELOUARDI23/springboot-backend.git'
             }
         }
 
