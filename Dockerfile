@@ -1,4 +1,7 @@
-FROM openjdk:8
+FROM openjdk:17-jdk
+
+COPY target/springboot-backend.jar .
+
 EXPOSE 8080
-ADD target/springboot-backend.jar springboot-backend.jar
-ENTRYPOINT ["java","-jar","/springboot-backend.jar"]
+
+ENTRYPOINT["java","-jar","springboot-backend.jar"
