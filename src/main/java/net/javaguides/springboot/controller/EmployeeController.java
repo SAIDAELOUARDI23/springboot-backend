@@ -20,9 +20,9 @@ import net.javaguides.springboot.exception.ResourceNotFoundException;
 import net.javaguides.springboot.model.Employee;
 import net.javaguides.springboot.repository.EmployeeRepository;
 
-@CrossOrigin(origins ="http://13.49.238.204:80")
 @RestController
-
+@RequestMapping("/employee")
+@CrossOrigin("*")	
 public class EmployeeController {
 
 	@Autowired
