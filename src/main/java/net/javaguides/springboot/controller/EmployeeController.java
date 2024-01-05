@@ -22,7 +22,8 @@ import net.javaguides.springboot.repository.EmployeeRepository;
 
 @RestController
 @RequestMapping("/employees")
-@CrossOrigin("*")	
+@CrossOrigin("*")
+@RequestMapping("/api/v1/")	
 public class EmployeeController {
 
 	@Autowired
