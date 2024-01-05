@@ -21,7 +21,7 @@ import net.javaguides.springboot.model.Employee;
 import net.javaguides.springboot.repository.EmployeeRepository;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/employees")
 @CrossOrigin("*")	
 public class EmployeeController {
 
