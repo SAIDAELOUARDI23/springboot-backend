@@ -22,7 +22,7 @@ import net.javaguides.springboot.repository.EmployeeRepository;
 
 @CrossOrigin(origins ="http://13.49.238.204:80")
 @RestController
-@RequestMapping("/api/v1/")
+
 public class EmployeeController {
 
 	@Autowired
